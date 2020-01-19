@@ -5,7 +5,7 @@ Spyder Editor
 This is a temporary script file.
 """
 
-import pandas as pd                         #import modules
+import pandas as pd                         #import modules in python
 import numpy 
 from django.conf import settings as djangoSettings
 from numpy.polynomial.polynomial import polyfit
@@ -38,7 +38,7 @@ def start(n,xval=None,xFile='xSample.csv',yFile='ySample.csv'):
 
 def curvefit(x,y):       #
     plt.clf()
-        # Sample data
+        # Sample data for curve fit
    
 
     # Fit with polyfit
@@ -53,14 +53,14 @@ def curvefit(x,y):       #
     plt.savefig(djangoSettings.MEDIA_ROOT+'/graphs/curvefit.png')
     return 'curvefit.png'
     
-def histgraph(x,y):        #histogram
+def histgraph(x,y):        #to plot histogram
     plt.clf()
     df=pd.DataFrame(y)
     plt.hist(df,bins=20)
     plt.savefig(djangoSettings.MEDIA_ROOT+'/graphs/hist.png')
     return 'hist.png'
 
-def bargraph(x,y):          #bargraph
+def bargraph(x,y):          #to plot bargraph
     plt.clf()
     plt.bar(x,y)
     plt.xlabel('Absorbance')
@@ -74,7 +74,7 @@ def value(x,y,xval):
     yval=b+m*xval
     return yval
 
-def scatter(x,y):           #scatter graph
+def scatter(x,y):           #to plot scatter graph
     plt.clf()
     plt.scatter(x,y)
     plt.xlabel('Absorbance')
